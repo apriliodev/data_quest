@@ -15,7 +15,7 @@ def gen_player_achievements() -> set[str]:
     return ach_set
 
 
-def ft_achievement_tracker() -> None:
+# def ft_achievement_tracker() -> None:
     players: dict[str, set[str]] = {
         "Alice": gen_player_achievements(),
         "Bob": gen_player_achievements(),
@@ -47,6 +47,33 @@ def ft_achievement_tracker() -> None:
     for name, ach_set in players.items():
         x_missing = all_achi.difference(ach_set)
         print(f"{name} is missing: {x_missing}")
+
+
+def ft_achievement_tracker() -> None:
+    achievements: set[str] = set(all_ach)
+    a: set[str] = gen_player_achievements()
+    b: set[str] = gen_player_achievements()
+    c: set[str] = gen_player_achievements()
+    d: set[str] = gen_player_achievements()
+
+    print(f"Player Alice: {a}")
+    print(f"Player Bob: {b}")
+    print(f"Player Charlie: {c}")
+    print(f"Player Dylan: {d}\n")
+
+    print(
+        f"All distinct achievements: {set.union(a, b, c, d)}\n")
+    print(f"Common achievements: {set.intersection(a, b, c, d)}\n")
+
+    print(f"Only Alice has: {a.difference(b, c, d)}")
+    print(f"Only Bob has: {b.difference(a, c, d)}")
+    print(f"Only Charlie has: {c.difference(a, b, d)}")
+    print(f"Only Dylan has: {d.difference(a, b, c)}\n")
+
+    print(f"Alice is missing: {achievements.difference(a)}")
+    print(f"Bob is missing: {achievements.difference(b)}")
+    print(f"Charlie is missing: {achievements.difference(c)}")
+    print(f"Dylan is missing: {achievements.difference(d)}")
 
 
 if __name__ == "__main__":
