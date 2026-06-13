@@ -13,13 +13,14 @@ def check_scores(arg: list[str]) -> list[int]:
         try:
             int(arg[i])
         except ValueError:
-            print(f"Invalid parameters: '{arg[i]}'")
+            print(f"Invalid parameter: '{arg[i]}'")
             count += 1
         i += 1
 
     processed = len(arg) - count
     if (processed == 0):
-        raise NoArguments(f"Usage: python {arg[0]} <score1> <score2> ...")
+        raise NoArguments(
+            f"No scores provided.   Usage: python {arg[0]} <score1> <score2> ...")
 
     i = 0
     j = 1
@@ -51,15 +52,16 @@ def show(arg: list[str]):
     total_s = total(scores)
     len_s = len(scores)
     avrg = total_s / len_s
-
-    print("=== Player Score Ananlytics ===")
+    s_range = {max(scores)} - {min(scores)}
     print(f"Scores processed: {scores}")
+    print(f"Total players: {len_s}")
     print(f"Total score: {total_s}")
     print(f"Average score: {avrg}")
     print(f"High score: {max(scores)}")
     print(f"Low score: {min(scores)}")
-    print(f"Score range: {max(scores)} - {min(scores)}")
+    print(f"Score range: {max(scores) - min(scores)}")
 
 
 if __name__ == "__main__":
+    print("=== Player Score Ananlytics ===")
     show(sys.argv)
