@@ -19,8 +19,8 @@ def check_scores(arg: list[str]) -> list[int]:
 
     processed = len(arg) - count
     if (processed == 0):
-        raise NoArguments(
-            f"No scores provided.   Usage: python {arg[0]} <score1> <score2> ...")
+        print("No scores provided.   ")
+        raise NoArguments(f"Usage: python {arg[0]} <score1> <score2> ...")
 
     i = 0
     j = 1
@@ -52,7 +52,6 @@ def show(arg: list[str]):
     total_s = total(scores)
     len_s = len(scores)
     avrg = total_s / len_s
-    s_range = {max(scores)} - {min(scores)}
     print(f"Scores processed: {scores}")
     print(f"Total players: {len_s}")
     print(f"Total score: {total_s}")

@@ -4,7 +4,8 @@ import random
 all_ach: list[str] = ["Crafting Genius", "Strategist", "World Savior",
                       "Speed Runner", "Survivor", "Master Explorer",
                       "Treasure Hunter", "Unstoppable", "First Steps",
-                      "Collector Supreme", "Untouchable", "Sharp Mind", "Boss Slayer"]
+                      "Collector Supreme", "Untouchable", "Sharp Mind",
+                      "Boss Slayer"]
 
 
 def gen_player_achievements() -> set[str]:
