@@ -38,4 +38,5 @@ def ft_data_stream() -> None:
         print(f"Remains in list: {events}")
 
 
-ft_data_stream()
+if __name__ == "__main__":
+    ft_data_stream()
